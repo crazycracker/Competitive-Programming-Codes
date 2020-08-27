@@ -1,0 +1,12 @@
+{
+"shell_cmd": "g++ \"${file}\" -o \"${file_path}\\\\${file_base_name}\"", "file_regex": "^(..[^:]):([0-9]+):?([0-9]+)?:? (.)$",
+"shell_cmd": "g++ -O2 -std=c++11 \"${file}\" -o \"${file_path}\\\\${file_base_name}\" && \"${file_path}\\\\${file_base_name}\" < input.txt",
+"working_dir": "${file_path}",
+"selector": "source.c, source.c++",
+
+"variants": [
+{ "name": "Run + Commit",
+"shell_cmd": "g++ -O2 -std=c++11 \"${file}\" -o \"${file_path}\\\\${file_base_name}\" && \"${file_path}\\\\${file_base_name}\" < input.txt && git add test.cpp && dd if=\"${file}\" of=*/Enter the location of your Programming folder her/*/name.txt bs=10 count=1 && git commit -F name.txt ",
+}
+]
+}
